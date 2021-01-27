@@ -7,10 +7,8 @@ import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,9 +19,8 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity implements RecyclerAdapter.OnItemClickInterface {
-    //public static String FILE_PATH = "android.resource://com.example.playertest/raw/cyber";
+
     private MediaPlayer player;
-    private AudioManager audioManager;
     private ArrayList<Track> tracksList;
     private ImageButton previousButton, nextButton;
     private MediaMetadataRetriever retriever;
@@ -36,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private int i = 0;
-   // private Object object;
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -161,8 +158,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.O
 
 
         if (player != null && retriever != null) {
-           //todo String tracktitle = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
-          //todo  String trackartist = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST);
+
 
             player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
